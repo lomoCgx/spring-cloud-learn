@@ -33,7 +33,16 @@ public class UsersRepository {
 	
 	@Transactional(readOnly = true)
 	public Users findUsersById(String id) {
-		String sql = " select id,username,password,salt,description from users where id =? ";
-		return jdbcTemplate.queryForObject(sql, new Object[] {id}, Users.class);
+		String sql = " select id,username,password,salt,locked,description from users where id =? ";
+		return jdbcTemplate.queryForObject(sql, new Object[] {id}, new RowMapper<Users>() {
+			@Override
+			public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Users users = new Users();
+				users.setId(rs.getInt("id"));
+				users.setUsername(rs.getString("username"));
+				users.setUsername(rs.getString("password"));
+				return users;
+			}
+        });
 	}
 }

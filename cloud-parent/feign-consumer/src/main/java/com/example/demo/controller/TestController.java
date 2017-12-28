@@ -22,10 +22,12 @@ public class TestController {
         return testService.test();
     }
     
-	@RequestMapping(value="/query", method=RequestMethod.GET,consumes = "application/json")
-    public Users query(){
-		System.out.println("======================================================");
-        //return testService.queryUsers("1");
-		return null;
+	@RequestMapping(value="/query/{id}", method=RequestMethod.GET,produces = { "application/json;charset=UTF-8" })
+    public Users query(@PathVariable("id") String id){
+		System.out.println("==================="+id+"===================================");
+		Users users = testService.queryUsers(id);
+		System.out.println(users.toString());
+        return users;
+		//return null;
     }
 }
