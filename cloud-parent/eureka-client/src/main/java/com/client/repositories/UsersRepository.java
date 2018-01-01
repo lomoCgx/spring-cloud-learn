@@ -37,6 +37,7 @@ public class UsersRepository {
 		return jdbcTemplate.queryForObject(sql, new Object[] {id}, new RowMapper<Users>() {
 			@Override
 			public Users mapRow(ResultSet rs, int rowNum) throws SQLException {
+
 				Users users = new Users();
 				users.setId(rs.getInt("id"));
 				users.setUsername(rs.getString("username"));

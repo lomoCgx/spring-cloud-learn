@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cloudentity.model.Users;
+import com.example.demo.service.hystric.TestServiceHystric;
 
-@FeignClient(value = "service-hi")
+@FeignClient(value = "service-hi",fallback=TestServiceHystric.class)
 public interface TestService {
 
 	@RequestMapping(value = "/dc",method = RequestMethod.GET)

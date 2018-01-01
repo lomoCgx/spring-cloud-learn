@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: ribbon-comsumer
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Lenovo
+Implementation-Vendor-Id: com.cloud-parent
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/cloud-parent
+ /ribbon-comsumer/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
