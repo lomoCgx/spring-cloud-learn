@@ -170,5 +170,10 @@
 		<module>ribbon-comsumer</module>
 		<module>config-server</module>
 		<module>config-client</module>
+		<module>config-client1</module>
+		<module>config-client2</module>
+		<module>server-zipkin</module>
+		<module>server-zipkin-hi</module>
+		<module>server-zipkin-miya</module>
 	</modules>
 </project>
