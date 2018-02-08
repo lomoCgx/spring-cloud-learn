@@ -1,4 +1,4 @@
-neo.hello=helloImDev
+neo.hello=helloImDev i hava change
 server.port=15025
 #eureka.client.service-url.defaultZone=http://cgx:cgx123@peer1:15000/eureka/,http://cgx:cgx123@peer2:15001/eureka/
 spring.application.name=client-ribbon1
