@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.demo.pojo.User;
 
 @Repository
+@Transactional
 public class UserDao {
 
 	@Autowired  
@@ -30,6 +31,12 @@ public class UserDao {
 			}
         });  
     }
+	
+	
+	public int insertUser(User user) {
+		String sql = " insert into user(username,password,salt,description) values(?,?,?,?) ";
+		return jdbcTemplate.update(sql, user.getUsername(),user.getPassword(),user.getSalt(),user.getDescription());
+	}
 	
 	@Transactional(readOnly = true)
 	public User findUsersById(String id) {
