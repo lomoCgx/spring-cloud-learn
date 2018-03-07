@@ -16,11 +16,15 @@ public class TopictSender {
         String context = "sendTopicOne cgx " + new Date();
         System.out.println("Sender : " + context);
         this.rabbitTemplate.convertAndSend("exchangeTopicTest", "topic.Queue.key1", context);
+        
+        System.out.println("12222222222222222222" + new Date());
     }
     
     public void sendTopicTwo() {
         String context = "sendTopicTwo cgx " + new Date();
         System.out.println("Sender : " + context);
         this.rabbitTemplate.convertAndSend("exchangeTopicTest", "topic.Queue.key2", context);
+        
+        System.out.println("333333333333333333333333333333333" + new Date());
     }
 }
